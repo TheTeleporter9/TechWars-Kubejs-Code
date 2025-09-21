@@ -1,1 +1,16 @@
+const minX = -100;
+const maxX = 100;
+const minZ = -100;
+const maxZ = 100;
 
+onEvent('player.tick', event => {
+    let player = event.player;
+    let pos = player.getPosition(); // x, y, z
+
+    if(pos.x < minX || pos.x > maxX || pos.z < minZ || pos.z > maxZ) {
+        // Nachricht anzeigen
+        player.tell("Du verlässt die erlaubte Welt!");
+
+    player.damage(2)
+    }
+});
