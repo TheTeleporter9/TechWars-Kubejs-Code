@@ -14,7 +14,7 @@ ServerEvents.recipes(event => {
             const keep = keepPrefix.some(preix => id.startsWith(preix));
             if (keep) return;
 
-            event.remove({id: recepie.id});
+            event.remove({id});
 
     });
 })
